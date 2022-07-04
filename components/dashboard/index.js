@@ -124,20 +124,7 @@ function Dashboard(props) {
   const [dataSetYear, setDataSetYear] = useState(initialDataSetYear)
   const [isLoading, setLoading] = useState(false)
 
-  useEffect(() => {
-    const dataUser = responseData.user;
-    const dataMood = responseData.mood;
-    const dataAcousticness = responseData.acousticness;
-    const dataDance = responseData.dance;
-    const dataEnergy = responseData.energy;
-    const dataYear = responseData.year;
-    handleDataSetMood(dataMood)
-    handleDataSetEnergy(dataEnergy)
-    handleDataSetDance(dataDance)
-    handleDataSetAcousticness(dataAcousticness)
-    handleDataSetYear(dataYear)
-    setDataUser(dataUser)
-  }, []);
+  
 
   function handleDataSetMood(dataMood){
     var tempMood = initialDataSetMood;
@@ -192,6 +179,21 @@ function Dashboard(props) {
   function handleShare(){
      navigator.clipboard.writeText(process.env.BASE_URI+"/share?id="+dataUser.id);
   }
+
+  useEffect(() => {
+    const dataUser = responseData.user;
+    const dataMood = responseData.mood;
+    const dataAcousticness = responseData.acousticness;
+    const dataDance = responseData.dance;
+    const dataEnergy = responseData.energy;
+    const dataYear = responseData.year;
+    handleDataSetMood(dataMood)
+    handleDataSetEnergy(dataEnergy)
+    handleDataSetDance(dataDance)
+    handleDataSetAcousticness(dataAcousticness)
+    handleDataSetYear(dataYear)
+    setDataUser(dataUser)
+  }, []);
 
   return (
     <>
