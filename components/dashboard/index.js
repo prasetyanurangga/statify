@@ -125,7 +125,7 @@ function Dashboard(props) {
     var tempMood = initialDataSetMood;
 
     console.log(dataMood.depressed.count)
-    tempMood.datasets[{
+    tempMood.datasets = [{
       data: [
         dataMood.depressed.count,
         dataMood.sad.count,
