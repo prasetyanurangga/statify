@@ -32,7 +32,6 @@ import { Doughnut, Line } from "react-chartjs-2";
  
 function Dashboard(props) {
   const { responseData } = props;
-  console.log(responseData)
   const initialDataSetMood = {
     labels: [
       'Depressed',
@@ -189,12 +188,9 @@ function Dashboard(props) {
 
   function handleDataSetYear(dataYear){
     var tempYear = initialDataSetYear;
-    console.log(dataYear.item)
     tempYear.datasets[0].data = dataYear.item.map((itemYear) => {
       return itemYear.count
     })
-
-    console.log(tempYear)
     setDataSetYear(tempYear);
   }
 
@@ -216,6 +212,8 @@ function Dashboard(props) {
     handleDataSetYear(dataYear)
     setDataUser(dataUser)
   }, []);
+
+  console.log(dataSetMood)
 
   return (
     <>
