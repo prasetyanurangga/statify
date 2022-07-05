@@ -29,7 +29,7 @@ ChartJS.register(
 import { Doughnut, Line } from "react-chartjs-2";
 
 
-
+ 
 function Dashboard(props) {
   const { responseData } = props;
   console.log(responseData)
