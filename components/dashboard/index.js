@@ -39,7 +39,20 @@ function Dashboard(props) {
       'Happy',
       'Elated'
     ],
-    datasets: []
+    datasets: [{
+      data: [
+        0,
+        0,
+        0,
+        0
+      ],
+      backgroundColor: [
+        '#FF6384',
+        '#36A2EB',
+        '#FFCE56',
+        '#69bebf'
+      ]
+    }]
   };
 
   const initialDataSetEnergy = {
@@ -48,7 +61,7 @@ function Dashboard(props) {
       'Chill'
     ],
     datasets: [{
-      data: [20,30],
+      data: [0,0],
       backgroundColor: [
       '#FF6384',
       '#36A2EB'
@@ -62,14 +75,7 @@ function Dashboard(props) {
       'Party',
       'Relax'
     ],
-    datasets: [{
-      data: [0,0],
-      backgroundColor: [
-      '#FF6384',
-      '#36A2EB'
-      ],
-      label: 'Song By Dancebility'
-    }]
+    datasets: []
   };
 
   const initialDataSetAcousticness = {
@@ -77,14 +83,7 @@ function Dashboard(props) {
       'Acoustic',
       'Non Acoustic'
     ],
-    datasets: [{
-      data: [0,0],
-      backgroundColor: [
-      '#FF6384',
-      '#36A2EB'
-      ],
-      label: 'Song By Acousticness'
-    }]
+    datasets: []
   };
 
   const initialDataSetYear = {
@@ -99,12 +98,7 @@ function Dashboard(props) {
       '2010',
       '2020'
     ],
-    datasets: [{
-      data: [0,0,0,0,0,0,0,0,0],
-      borderColor: 'rgb(255, 99, 132)',
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
-      label: 'Song By Year'
-    }]
+    datasets: []
   };
   const [data, setData] = useState(null)
   const [dataUser, setDataUser] = useState({
@@ -144,37 +138,63 @@ function Dashboard(props) {
 
   function handleDataSetEnergy(dataEnergy){
     var tempEnergy = initialDataSetEnergy;
-    tempEnergy.datasets[0].data = [
-      dataEnergy.high_energy.count,
-      dataEnergy.chill.count
-    ]
+    tempEnergy.datasets = [{
+      data: [
+        dataEnergy.high_energy.count,
+        dataEnergy.chill.count
+      ],
+      backgroundColor: [
+      '#FF6384',
+      '#36A2EB'
+      ],
+      label: 'Song By Energy'
+    }]
     setDataSetEnergy(tempEnergy);
   }
 
   function handleDataSetDance(dataDance){
     var tempDance = initialDataSetDance;
-    tempDance.datasets[0].data = [
-      dataDance.party.count,
-      dataDance.relax.count
-    ]
+    tempDance.datasets = [{
+      data: [
+        dataDance.party.count,
+        dataDance.relax.count
+      ],
+      backgroundColor: [
+      '#FF6384',
+      '#36A2EB'
+      ],
+      label: 'Song By Dancebility'
+    }]
     setDataSetDance(tempDance);
   }
 
 
   function handleDataSetAcousticness(dataAcousticness){
     var tempAcousticness = initialDataSetAcousticness;
-    tempAcousticness.datasets[0].data = [
-      dataAcousticness.acoustic.count,
-      dataAcousticness.non_acoustic.count
-    ]
+    tempAcousticness.datasets = [{
+      data: [
+        dataAcousticness.acoustic.count,
+        dataAcousticness.non_acoustic.count
+      ],
+      backgroundColor: [
+      '#FF6384',
+      '#36A2EB'
+      ],
+      label: 'Song By Acousticness'
+    }]
     setDataSetAcousticness(tempAcousticness);
   }
 
   function handleDataSetYear(dataYear){
     var tempYear = initialDataSetYear;
-    tempYear.datasets[0].data = dataYear.item.map((itemYear) => {
-      return itemYear.count
-    })
+    tempYear.datasets = [{
+      data: dataYear.item.map((itemYear) => {
+        return itemYear.count
+      }),
+      borderColor: 'rgb(255, 99, 132)',
+      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      label: 'Song By Year'
+    }]
     setDataSetYear(tempYear);
   }
 
@@ -191,9 +211,9 @@ function Dashboard(props) {
     const dataYear = responseData.year;
     handleDataSetMood(dataMood)
     handleDataSetEnergy(dataEnergy)
-    // handleDataSetDance(dataDance)
-    // handleDataSetAcousticness(dataAcousticness)
-    // handleDataSetYear(dataYear)
+    handleDataSetDance(dataDance)
+    handleDataSetAcousticness(dataAcousticness)
+    handleDataSetYear(dataYear)
     setDataUser(dataUser)
   }, []);
 
