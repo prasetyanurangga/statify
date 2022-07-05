@@ -2,11 +2,32 @@ import Head from 'next/head'
 import Image from 'next/image'
 import querystring from 'querystring'
 import React, { useEffect, useState } from "react";
-import Cookies from 'js-cookie'
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler,
+  ArcElement
+} from "chart.js";
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler,
+  ArcElement
+);
 
-import { Doughnut, Line  } from 'react-chartjs-2';
-import { ArcElement } from "chart.js";
-import Chart from "chart.js/auto";
+import { Doughnut, Line } from "react-chartjs-2";
+
 
 
 function Dashboard(props) {
