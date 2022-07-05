@@ -4,7 +4,7 @@ import querystring from 'querystring'
 import React, { useEffect, useState } from "react";
 import Cookies from 'js-cookie'
 import 'chart.js/auto';
-import { Chart  } from 'react-chartjs-2';
+import { Chart, Doughnut, Line  } from 'react-chartjs-2';
 
 
 
@@ -207,26 +207,22 @@ function Dashboard(props) {
         </div>
         <div className="flex lg:flex-row flex-col">
           <div className="lg:w-1/4 w-full h-96">
-            <Chart
-             type="doughnut"
+            <Doughnut
              data={dataSetMood}
             />
           </div>
           <div className="lg:w-1/4 w-full h-96">
-            <Chart
-             type="doughnut"
+            <Doughnut
              data={dataSetEnergy}
             />
           </div>
           <div className="lg:w-1/4 w-full h-96">
-            <Chart
-             type="doughnut"
+            <Doughnut
              data={dataSetDance}
             />
           </div>
           <div className="lg:w-1/4 w-full h-96">
-            <Chart
-             type="doughnut"
+            <Doughnut
              data={dataSetAcousticness}
             />
           </div>
@@ -234,8 +230,7 @@ function Dashboard(props) {
 
         <div className="flex">
           <div className="w-full h-96">
-            <Chart
-             type="line"
+            <Line
              data={dataSetYear}
             />
           </div>
