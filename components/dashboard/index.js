@@ -42,16 +42,10 @@ function Dashboard(props) {
     datasets: [{
       data: [0,0,0,0],
       backgroundColor: [
-      '#FF6384',
-      '#36A2EB',
-      '#FFCE56',
-      '#69bebf'
-      ],
-      hoverBackgroundColor: [
-      '#FF6384',
-      '#36A2EB',
-      '#FFCE56',
-      '#69bebf'
+        '#FF6384',
+        '#36A2EB',
+        '#FFCE56',
+        '#69bebf'
       ]
     }]
   };
@@ -62,12 +56,8 @@ function Dashboard(props) {
       'Chill'
     ],
     datasets: [{
-      data: [0,0],
+      data: [20,30],
       backgroundColor: [
-      '#FF6384',
-      '#36A2EB'
-      ],
-      hoverBackgroundColor: [
       '#FF6384',
       '#36A2EB'
       ],
@@ -86,10 +76,6 @@ function Dashboard(props) {
       '#FF6384',
       '#36A2EB'
       ],
-      hoverBackgroundColor: [
-      '#FF6384',
-      '#36A2EB'
-      ],
       label: 'Song By Dancebility'
     }]
   };
@@ -102,10 +88,6 @@ function Dashboard(props) {
     datasets: [{
       data: [0,0],
       backgroundColor: [
-      '#FF6384',
-      '#36A2EB'
-      ],
-      hoverBackgroundColor: [
       '#FF6384',
       '#36A2EB'
       ],
