@@ -39,15 +39,7 @@ function Dashboard(props) {
       'Happy',
       'Elated'
     ],
-    datasets: [{
-      data: [0,0,0,0],
-      backgroundColor: [
-        '#FF6384',
-        '#36A2EB',
-        '#FFCE56',
-        '#69bebf'
-      ]
-    }]
+    datasets: []
   };
 
   const initialDataSetEnergy = {
@@ -131,12 +123,22 @@ function Dashboard(props) {
 
   function handleDataSetMood(dataMood){
     var tempMood = initialDataSetMood;
-    tempMood.datasets[0].data = [
-      dataMood.depressed.count,
-      dataMood.sad.count,
-      dataMood.happy.count,
-      dataMood.elated.count,
-    ]
+
+    console.log(dataMood.depressed.count)
+    tempMood.datasets[{
+      data: [
+        dataMood.depressed.count,
+        dataMood.sad.count,
+        dataMood.happy.count,
+        dataMood.elated.count,
+      ],
+      backgroundColor: [
+        '#FF6384',
+        '#36A2EB',
+        '#FFCE56',
+        '#69bebf'
+      ]
+    }]
     setDataSetMood(tempMood);
   }
 
@@ -188,7 +190,7 @@ function Dashboard(props) {
     const dataEnergy = responseData.energy;
     const dataYear = responseData.year;
     // handleDataSetMood(dataMood)
-    // handleDataSetEnergy(dataEnergy)
+    handleDataSetEnergy(dataEnergy)
     // handleDataSetDance(dataDance)
     // handleDataSetAcousticness(dataAcousticness)
     // handleDataSetYear(dataYear)
