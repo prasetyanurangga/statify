@@ -189,7 +189,7 @@ function Dashboard(props) {
     const dataDance = responseData.dance;
     const dataEnergy = responseData.energy;
     const dataYear = responseData.year;
-    // handleDataSetMood(dataMood)
+    handleDataSetMood(dataMood)
     handleDataSetEnergy(dataEnergy)
     // handleDataSetDance(dataDance)
     // handleDataSetAcousticness(dataAcousticness)
